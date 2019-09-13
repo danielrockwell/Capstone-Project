@@ -9,12 +9,15 @@ def make_bar_chart(state):
     else:
         data_years = pd.read_excel("../capstone_data/all_year.xlsx")
         data_years = data_years.query("State=='{}'".format(state))
-    barChart = px.bar(data_years, x="ReportYear", y="Prepared", hover_data=['State', 'Prepared'],
-                      labels={'ReportYear': 'Year of Report', 'Prepared': "Math Teachers Produced (Thousands)"})
+    barChart = px.bar(data_years,
+                      x="ReportYear", y="Prepared",
+                      hover_data=['State', 'Prepared'],
+                      # labels={'ReportYear': 'Year of Report', 'Prepared': "Math Teachers (Thousands)"}
+                      )
     barChart.update_layout(
-        title="Number of Math Teachers Produced by Year" if (
-                state == 'All' or state == "") else "Number of Math Teachers in {} Produced by Year".format(
-            state),
+        # title="Number of Math Teachers Produced by Year" if (
+        #         state == 'All' or state == "") else "Number of Math Teachers in {} Produced by Year".format(
+        #     state),
         title_x=.5,
         title_font_size=30,
         font_family="Open Sans",
@@ -48,14 +51,14 @@ def make_US_map(year):
     )
 
     fig.update_layout(
-        title=plotgr.layout.Title(
-            text="{} Prepared Traditional Math Teachers by State".format(year),
-            xref="paper",
-            x=.5,
-            y=1,
-            font_family="Open Sans",
-            font_size=30,
-        ),
+        # title=plotgr.layout.Title(
+        #     text="{} Prepared Traditional Math Teachers by State".format(year),
+        #     xref="paper",
+        #     x=.5,
+        #     y=1,
+        #     font_family="Open Sans",
+        #     font_size=30,
+        # ),
         margin=plotgr.layout.Margin(
             l=0,
             r=0,
