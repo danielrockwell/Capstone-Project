@@ -5,7 +5,7 @@ from dash.dependencies import Output, Input, State
 from capstone.capstone_pyfiles.graphs import make_bar_chart,make_US_map
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
-                        'https://fonts.googleapis.com/css?family=Raleway&display=swap']
+                        'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
