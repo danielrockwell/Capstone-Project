@@ -1,0 +1,86 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+.all {
+   background-color: rgb(255, 255, 255);
+}
+
+.banner {
+    height: 75px;
+    margin: -10px -10px 10px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 2px;
+}
+
+.banner h2{
+    color: white;
+    margin-left: 2%;
+    padding-top: 2px;
+    font-size: 280%;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.banner Img{
+   position=relative;
+   float: right;
+   height: 55px;
+   padding-top: 0.8%;
+   padding-right: 1%;
+}
+
+.space {
+   display: inline;
+}
+
+.first-button {
+   display: inline;
+   position: relative;
+   left: 30px;
+   width: 200px;
+   height: 200px;
+   background-color: rgb(255,255,255);
+}
+
+.second-button {
+    float: right;
+    background-color: rgb(255,255,255);
+    position: relative;
+    padding-right: 300px;
+    right: 10px;
+}
+
+.footer {
+   background-image: linear-gradient(white 30%, rgb(222, 222, 222) 70%);
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   height: 100px;
+   width: 100%;
+   overflow: hidden;
+}
+
+.footer h2{
+  float: right;
+  font-size: 100%;
+
+  font-family: 'Raleway', sans-serif;
+  padding-right: 1%;
+}
+
+#bar_chart {
+   padding-bottom: 10px;
+   padding-top: 10px;
+}
+
+#US_map {
+   padding-top: 20px;
+}
+
+
+/*
+background-image: linear-gradient(red, yellow);
+*/
