@@ -1,12 +1,12 @@
 # Capstone Project
 
-Math 4020 Capstone Project
+This project utilizes the data collected from from Title II from the Higher Education Act to analyze the future of Mathematics Education Learning. This is made possible by the following:
 
-This project utilizes the data collected from from Title II from the Higher Education Act.
+*Agrregated, cleaned, and transformed data from Title II source.
+*Integrated open source software to manipulate data into usable formatting.
+*Created a dashboard using tools such as Dash, Pandas, Plotly to analyze the education data released from 2012-2018.
 
-Created a dashboard in Python using tools such as Dash, Pandas, Plotly to analyze the education data released from 2012-2018.
-
-## Python Code Examples:
+## Tools/Languages Used with Examples:
 
 Python modules are needed to use this application
 
@@ -33,11 +33,11 @@ Python modules are needed to use this application
 3. Other programming/scripting languages, such as `CSS` and `HTML` are used to create and style the dashboard:
 
    ```css
-   .banner Img {
-       position=relative;
-       float: right;
-       height: 55px;
-       padding-top: 0.8%;
-       padding-right: 1%;
-    }
+    .banner Img {
+        position=relative;
+        float: right;
+        height: 55px;
+        padding-top: 0.8%;
+        padding-right: 1%;
+     }
    ```
