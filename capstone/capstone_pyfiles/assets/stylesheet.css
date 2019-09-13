@@ -4,30 +4,31 @@ html {
 }
 
 .all {
-   background-color: rgb(255, 255, 255);
+   background-color: rgb(235, 235, 235);
 }
 
 .banner {
     height: 75px;
     margin: -10px -10px 10px;
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(62, 88, 100);
     border-radius: 2px;
 }
 
 .banner h2{
-    color: black;
+    text-align: center;
+    color: white;
     margin-left: 2%;
     padding-top: 2px;
-    font-size: 280%;
+    font-size: 250%;
     display: inline-block;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Alegreya Sans', sans-serif;
 
 }
 
 .banner Img{
    position=relative;
    float: right;
-   height: 55px;
+   height: 50%;
    padding-top: 0.8%;
    padding-right: 1%;
 }
