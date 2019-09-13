@@ -12,7 +12,7 @@ def make_bar_chart(state):
     barChart = px.bar(data_years,
                       x="ReportYear", y="Prepared",
                       hover_data=['State', 'Prepared'],
-                      labels={'ReportYear': "", 'Prepared': ""}
+                      labels={'ReportYear': "{}".format(state), 'Prepared': "Teachers (in Thousands)"}
                       )
     barChart.update_layout(
         # title="Number of Math Teachers Produced by Year" if (
@@ -47,12 +47,13 @@ def make_US_map(year):
             z=result["Prepared"],
             locationmode="USA-states",
             colorscale='blues',
-            colorbar_title="Number of Mathematics Teachers",
+            # colorbar_title="Number of Mathematics Teachers",
             colorbar_title_font_size=15,
             colorbar_title_side='right',
-            colorbar_len=.75,
+            colorbar_len=.85,
             colorbar_xanchor='left',
-            colorbar_x=-0.1
+            colorbar_x=-0.07,
+            colorbar_xpad=50,
         )
     )
 
@@ -69,7 +70,7 @@ def make_US_map(year):
             l=0,
             r=0,
             b=0,
-            t=0, ),
+            t=50),
         geo_scope='usa',
         autosize=True,
         height=600

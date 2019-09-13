@@ -31,7 +31,7 @@ import plotly.express as px
 # barChart.update_xaxes(title_font=dict(size=25))
 # barChart.update_yaxes(title_font=dict(size=25))
 
-
+YEAR=0
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
 
@@ -66,22 +66,34 @@ app.layout = html.Div(children=[
     ),
 
     html.Div([
+
         html.Div([
             html.Div([
                 dcc.Graph(id='bar_chart'),
                 html.Div([
-                    html.P("What a beautiful dhjf")
+                    html.P("Production of Math Teachers by Year")
                 ],className="title"),
 
             ],className='containBar'),
         ],className="six columns"),
+
         html.Div([
-            dcc.Graph(id='US_map')
-        ],
-            className="six columns"),
+            html.Div([
+                dcc.Graph(id='US_map'),
+                html.Div([
+                    html.P("Production of Math Teachers by State")
+                ], className="title"),
+
+            ], className='containBar'),
+        ], className="six columns"),
+
+
     ], className="row"),
+
+
+
     html.Div([
-        html.H2("Hello"),
+        html.H2(""),
     ], id="spacing"),
 
     html.Div([

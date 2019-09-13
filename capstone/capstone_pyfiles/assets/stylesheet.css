@@ -48,17 +48,30 @@ html {
     margin-right: 3%;
 }
 
+.title {
+    position: absolute;
+    bottom: 90%;
+    right: 30%;
+    text-align: center;
+    color: black;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 200%;
+}
+
+#bar_chart, #US_map {
+    margin-top: 1%;
+    border:1px solid black;
+    position: relative;
+}
 
 #bar_chart {
    margin-left: 5%;
-   border:1px solid black;
-   position: relative;
 }
 
 #US_map {
     margin-right: 5%;
-    border:1px solid black;
-    position: relative;
 }
 
 .row {
@@ -70,23 +83,17 @@ html {
 
 }
 
-.title {
-    position: absolute;
-    bottom: 90%;
-    right: 40%;
-    color: black;
-    padding-left: 1%;
-    padding-right: 1%;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 200%;
+#spacing {
+    background-color: rgb(235,235,235);
+    height: 500px;
 }
 
 .footer {
-   background-image: linear-gradient(white 30%, rgb(222, 222, 222) 70%);
+   background-image: linear-gradient(rgb(235, 235, 235) ,white);
    position: absolute;
    left: 0;
    bottom: 0;
-   height: 50px;
+   height: 100px;
    width: 100%;
    overflow: hidden;
 }
@@ -99,9 +106,6 @@ html {
   padding-right: 1%;
 }
 
-#spacing {
-    background-color: green;
-}
 
 /*
 background-image: linear-gradient(red, yellow);
