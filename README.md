@@ -2,9 +2,13 @@
 
 This project utilizes the data collected from from Title II from the Higher Education Act to analyze the future of Mathematics Education Learning. This is made possible by the following:
 
-*Agrregated, cleaned, and transformed data from Title II source.
-*Integrated open source software to manipulate data into usable formatting.
-*Created a dashboard using tools such as Dash, Pandas, Plotly to analyze the education data released from 2012-2018.
+* Agrregated, cleaned, and transformed data from Title II source.
+* Integrated open source software to manipulate data into usable formatting.
+* Created a dashboard using tools such as Dash, Pandas, Plotly to analyze the education data released from 2012-2018.
+
+<p align="center">
+  <img src="/dashboardV1.png" alt="Dashboard Version 1" width="738">
+</p>
 
 ## Tools/Languages Used with Examples:
 
