@@ -6,6 +6,8 @@ This project utilizes the data collected from from Title II from the Higher Educ
 * Integrated open source software to manipulate data into usable formatting.
 * Created a dashboard using tools such as Dash, Pandas, Plotly to analyze the education data released from 2012-2018.
 
+## First Version of Dashboard:
+
 <p align="center">
   <img src="/dashboardV1.png" alt="Dashboard Version 1" width="738">
 </p>
