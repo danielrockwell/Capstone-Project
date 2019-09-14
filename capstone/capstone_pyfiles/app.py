@@ -6,32 +6,7 @@ from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map
 import pandas as pd
 import plotly.express as px
 
-# data_years = pd.read_excel("../capstone_data/all_year.xlsx")
-# barChart = px.bar(data_years,
-#                   x="ReportYear", y="Prepared",
-#                   hover_data=['State', 'Prepared'],
-#                   labels={'ReportYear': "", 'Prepared': ""}
-#                   )
-# barChart.update_layout(
-#     # title="Number of Math Teachers Produced by Year" if (
-#     #         state == 'All' or state == "") else "Number of Math Teachers in {} Produced by Year".format(
-#     #     state),
-#     title_x=.5,
-#     title_font_size=30,
-#     font_family="Open Sans",
-#     autosize=True,
-#     margin={"l": 0,
-#             "r": 0,
-#             "t": 0,
-#             "b": 0},
-#     plot_bgcolor='rgba(0,0,0,0)',
-#
-# )
-
-# barChart.update_xaxes(title_font=dict(size=25))
-# barChart.update_yaxes(title_font=dict(size=25))
-
-YEAR=0
+YEAR = 0
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
 
@@ -47,18 +22,20 @@ app.layout = html.Div(children=[
                 id='usState-input',
                 placeholder="Enter State or 'All'",
                 type="text",
-                value=""
+                value="",
+                style={'width': 150}
             ),
-            html.Button(id="usState-submit-button", n_clicks=0, children='submit')
+            html.Button(id="usState-submit-button",children='Enter', n_clicks=0,style={'width': 100})
         ], className='first-button'),
         html.Div([
             dcc.Input(
                 id='year-input',
                 placeholder="Enter Year",
                 type="text",
-                value=""
+                value="",
+                style={'width': 120}
             ),
-            html.Button(id="submit-button", n_clicks=0, children='submit')
+            html.Button('Enter',id="submit-button", n_clicks=0,style={'width': 100})
         ], className='second-button'),
 
     ],
@@ -72,10 +49,10 @@ app.layout = html.Div(children=[
                 dcc.Graph(id='bar_chart'),
                 html.Div([
                     html.P("Production of Math Teachers by Year")
-                ],className="title"),
+                ], className="title"),
 
-            ],className='containBar'),
-        ],className="six columns"),
+            ], className='containBar'),
+        ], className="six columns"),
 
         html.Div([
             html.Div([
@@ -87,18 +64,15 @@ app.layout = html.Div(children=[
             ], className='containBar'),
         ], className="six columns"),
 
-
     ], className="row"),
 
-
+    html.Div([
+        html.Div([],className="spacing"),
+    ], className='row'),
 
     html.Div([
-        html.H2(""),
-    ], id="spacing"),
-
-    html.Div([
-        html.H2("@Copyright 2019 LSU Mathematics Department"),
-
+        # html.H2("@Copyright 2019 LSU Mathematics Department"),
+        html.H2("Footer")
     ],
         className="footer"
     ),

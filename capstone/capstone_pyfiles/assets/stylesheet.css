@@ -29,7 +29,7 @@ html {
 .banner Img{
    position=relative;
    float: right;
-   height: 50%;
+   height: 60%;
    padding-top: 0.8%;
    padding-right: 1%;
 }
@@ -39,20 +39,27 @@ html {
     vertical-align: middle;
 }
 
+#usState-submit-button, #submit-button {
+    margin-left: 10px;
+    background-color: rgb(102, 128, 140);
+}
+
 .first-button, .second-button {
-   background-color: rgb(102, 128, 140);
-   margin-bottom: 1%;
+
+   background-color: rgb(62, 88, 100);
+   margin-bottom: 2%;
+
 }
 
 .first-button {
-    margin-left: 40%;
-    margin-right: 3%;
+    margin-left: 10%;
+    margin-right: 2%;
 }
 
 .title {
     position: absolute;
-    bottom: 90%;
-    right: 30%;
+    bottom: 85%;
+    right: 20%;
     text-align: center;
     color: black;
     padding-left: 1%;
@@ -68,6 +75,7 @@ html {
     padding-right: 3%;
     padding-left: 3%;
     background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #bar_chart {
@@ -88,23 +96,23 @@ html {
 
 }
 
-#spacing {
+.spacing {
     background-color: white;
-    height: 350px;
+    height: 400px;
     margin-left: 2.35%;
     margin-right: 2.35%;
-    margin-top: 1%;
+    margin-top: 2%;
     border:1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+/*
 .footer {
-   background-image: linear-gradient(rgb(235, 235, 235) ,white);
-   position: absolute;
+   background-color: rgb(215, 215, 215);
    left: 0;
    bottom: 0;
    height: 100px;
    width: 100%;
-   overflow: hidden;
+   margin: -10px -10px 10px;
 }
 
 .footer h2{
@@ -113,7 +121,7 @@ html {
   font-family: 'Raleway', sans-serif;
   padding-right: 1%;
 }
-
+*/
 
 /*
 background-image: linear-gradient(red, yellow);

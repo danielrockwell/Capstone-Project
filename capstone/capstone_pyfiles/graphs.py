@@ -27,6 +27,7 @@ def make_bar_chart(state):
         #         "t":0,
         #         "b":0},
         plot_bgcolor='rgba(0,0,0,0)',
+        height=450
 
     )
 
@@ -50,9 +51,9 @@ def make_US_map(year):
             # colorbar_title="Number of Mathematics Teachers",
             colorbar_title_font_size=15,
             colorbar_title_side='right',
-            colorbar_len=.85,
+            colorbar_len=.65,
             colorbar_xanchor='left',
-            colorbar_x=-0.07,
+            colorbar_x=-0.2,
             colorbar_xpad=50,
         )
     )
@@ -70,9 +71,9 @@ def make_US_map(year):
             l=0,
             r=0,
             b=0,
-            t=50),
+            t=0),
         geo_scope='usa',
         autosize=True,
-        height=600
+        height=450
         )
     return fig
