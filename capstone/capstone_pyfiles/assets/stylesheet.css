@@ -115,16 +115,13 @@ html {
     border:1px solid black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-/*
-.footer {
-   background-color: rgb(215, 215, 215);
-   left: 0;
-   bottom: 0;
-   height: 100px;
-   width: 100%;
-   margin: -10px -10px 10px;
-}
 
+.footer {
+   background-color: rgb(235,235,235);
+   margin-top: 3%;
+   height: 200px;
+}
+/*
 .footer h2{
   float: right;
   font-size: 100%;

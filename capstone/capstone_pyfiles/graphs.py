@@ -48,7 +48,7 @@ def make_US_map(year):
             z=result["Prepared"],
             locationmode="USA-states",
             colorscale='blues',
-            colorbar_title="Year: {}".format(year) if year!="" else "" ,
+            colorbar_title="Year: {}".format(year) if year != "" else "",
             colorbar_title_font_size=15,
             colorbar_title_side='bottom',
             colorbar_len=.65,
@@ -75,5 +75,46 @@ def make_US_map(year):
         geo_scope='usa',
         autosize=True,
         height=450
-        )
+    )
+    return fig
+
+
+def make_data_table():
+    df = pd.read_excel('../capstone_data/master_subject.xlsx')
+    headerColor = 'grey'
+    rowEvenColor = 'lightgrey'
+    rowOddColor = 'white'
+    fig = plotgr.Figure(data=[plotgr.Table(
+
+        header=dict(values=list(df.columns),
+                    line_color='darkslategray',
+                    fill_color=headerColor,
+                    align=['left', 'center'],
+                    font=dict(color='white', size=12)),
+
+        cells=dict(values=[df.State, df.ReportYear, df.ProgramType, df.Category, df.Prepared],
+                   line_color='darkslategray',
+                   fill_color=[[rowOddColor, rowEvenColor, rowOddColor, rowEvenColor] * (len(df)//4)],
+                   align=['left', 'center'],
+                   font=dict(color='darkslategray', size=11)))
+    ])
+
+    fig.update_layout(
+        # title=plotgr.layout.Title(
+        #     text="{} Prepared Traditional Math Teachers by State".format(year),
+        #     xref="paper",
+        #     x=.5,
+        #     y=1,
+        #     font_family="Open Sans",
+        #     font_size=30,
+        # ),
+        margin=plotgr.layout.Margin(
+            l=20,
+            r=20,
+            b=20,
+            t=60),
+        autosize=True,
+        height=400
+    )
+
     return fig

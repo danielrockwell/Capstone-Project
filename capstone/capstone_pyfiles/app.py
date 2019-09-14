@@ -2,7 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Output, Input, State
-from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map
+from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table
 import pandas as pd
 import plotly.express as px
 
@@ -82,12 +82,29 @@ app.layout = html.Div(children=[
     ], className="row"),
 
     html.Div([
-        html.Div([], className="spacing"),
+        html.Div([
+            html.Div([
+                dcc.Graph(id='data_table', figure=make_data_table()),
+                html.Div([
+                    html.P("Teacher Production Table")
+                ], className="title"),
+
+            ], className='containBar'),
+        ], className='spacing')
     ], className='row'),
 
     html.Div([
-        # html.H2("@Copyright 2019 LSU Mathematics Department"),
-        html.H2("Footer")
+        html.Div([
+
+        ],id="lsu_math_site"),
+
+        html.Div([
+
+        ]),
+
+        html.Div([
+
+        ])
     ],
         className="footer"
     ),
