@@ -17,6 +17,17 @@ app.layout = html.Div(children=[
     html.Div([
         html.H2("Mathematics Teacher Production Dashboard"),
         html.Img(src="/assets/lsu_logo.png"),
+
+        html.Div([
+            dcc.Dropdown(
+                id='submit-button',
+                options=[{'label': str(x), 'value': x} for x in range(2012, 2019)],
+                value="",
+                placeholder="Select Year",
+                style={'width': 120}
+            ),
+        ], className='second-button'),
+
         html.Div([
             dcc.Input(
                 id='usState-input',
@@ -27,15 +38,6 @@ app.layout = html.Div(children=[
             ),
             html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
         ], className='first-button'),
-        html.Div([
-            dcc.Dropdown(
-                id='submit-button',
-                options=[{'label': str(x), 'value': x} for x in range(2012, 2019)],
-                value="",
-                placeholder="Select Year",
-                style={'width': 120}
-            ),
-        ], className='second-button'),
 
     ],
         className="banner"
@@ -79,7 +81,6 @@ app.layout = html.Div(children=[
 
     html.Div([
 
-
         html.Div([
             html.H2("@Copyright 2019 LSU Mathematics Department")
         ], id="lsu_math_site"),
@@ -105,6 +106,7 @@ def update_figure(year):
 def update_figure(n_clicks, state):
     barChart = make_bar_chart(state)
     return barChart
+
 
 @app.callback(Output("data_table", "figure"),
               [Input("usState-submit-button", "n_clicks")],
