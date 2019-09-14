@@ -89,22 +89,16 @@ app.layout = html.Div(children=[
                     html.P("Teacher Production Table")
                 ], className="title"),
 
-            ], className='containBar'),
+            ], className='containBarData'),
         ], className='spacing')
     ], className='row'),
 
     html.Div([
-        html.Div([
 
-        ],id="lsu_math_site"),
 
         html.Div([
-
-        ]),
-
-        html.Div([
-
-        ])
+            html.H2("My name is")
+        ], id="lsu_math_site"),
     ],
         className="footer"
     ),
