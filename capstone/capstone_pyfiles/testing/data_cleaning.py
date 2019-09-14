@@ -4,27 +4,35 @@ import plotly.express as plt
 
 
 # pd.set_option('display.expand_frame_repr', False)
-os.chdir("../title2_data")
+os.chdir("../../capstone_data/AllState_original/")
 SHEET_NAME = "PreparedBySubject"
-file_name = "../title2_data/all_year.xlsx"
+# file_name = "../capstone_data/all_year.xlsx"
 
-def create_df_by_year_pgmType(file):
-    dfs = pd.read_excel(file, sheet_name=SHEET_NAME)
-    dfs = dfs[dfs["Category"].str.contains('Mathematics')].filter(["State", "ReportYear","ProgramType", "Prepared"])
-    dfs = dfs.groupby(["State","ReportYear","ProgramType"], as_index=False)["Prepared"].sum()
-    return dfs
+
 
 def create_df_all_years_pgmType():
     df_year = pd.DataFrame()
     for file in glob.glob("*.xlsx"):
-        df_year = pd.concat([df_year,create_df_by_year_pgmType(file)])
+        df_year = pd.concat([df_year,master_subject(file)])
+    return df_year
 
-def create_df_all_years():
-    dfs = pd.read_excel(file_name)
-    dfs = dfs.groupby(["State", "ReportYear"], as_index=False)["Prepared"].sum()
+def master_subject(file):
+    dfs = pd.read_excel(file, sheet_name=SHEET_NAME)
+    dfs = dfs[dfs["Category"].str.contains('Teacher')].filter(["State", "ReportYear", "ProgramType", "Category", "Prepared"])
+    dfs = dfs.groupby(["State","ReportYear","ProgramType","Category"], as_index=False)["Prepared"].sum()
     return dfs
 
-df_year = create_df_all_years()
+# def create_df_by_year_pgmType(file):
+#     dfs = pd.read_excel(file, sheet_name=SHEET_NAME)
+#     dfs = dfs[dfs["Category"].str.contains('Mathematics')].filter(["State", "ReportYear","ProgramType", "Prepared"])
+#     dfs = dfs.groupby(["State","ReportYear","ProgramType"], as_index=False)["Prepared"].sum()
+#     return dfs
+#
+# def create_df_all_years():
+#     dfs = pd.read_excel(file_name)
+#     dfs = dfs.groupby(["State", "ReportYear"], as_index=False)["Prepared"].sum()
+#     return dfs
 
+res = create_df_all_years_pgmType()
 # Export into Excel Documents
-# df_year.to_excel("../capstone_pyfiles/all_year.xlsx", index=False)
+res.to_excel("../../capstone_data/master_subject.xlsx", index=False)
