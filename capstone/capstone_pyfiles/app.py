@@ -11,7 +11,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-
+app.title = 'Title II Dashboard'
 app.layout = html.Div(children=[
 
     html.Div([
@@ -30,15 +30,7 @@ app.layout = html.Div(children=[
         html.Div([
             dcc.Dropdown(
                 id='submit-button',
-                options=[
-                    {'label': '2018', 'value': 2018},
-                    {'label': '2017', 'value': 2017},
-                    {'label': '2016', 'value': 2016},
-                    {'label': '2015', 'value': 2015},
-                    {'label': '2014', 'value': 2014},
-                    {'label': '2013', 'value': 2013},
-                    {'label': '2012', 'value': 2012}
-                ],
+                options=[{'label': str(x), 'value': x} for x in range(2012, 2019)],
                 value="",
                 placeholder="Select Year",
                 style={'width': 120}

@@ -115,12 +115,22 @@ html {
     border:1px solid black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.footer h2{
+  float: right;
+  font-size: 100%;
+  font-family: 'Raleway', sans-serif;
+  padding-right: 1%;
+}
+
+
+
 /*
 .containBarData {
     position: relative;
     margin-bottom: 10%;
 }
-/*
+
 #lsu_math_site {
     margin-left: -10px;
     margin-right: -10px;
@@ -132,7 +142,7 @@ html {
     background-color: rgb(62, 88, 100);
     font-color: black;
 }
-/*
+
 .footer {
    background-color: rgb(215, 215, 215);
    left: 0;
@@ -142,12 +152,7 @@ html {
    margin: -10px -10px 10px;
 }
 */
-.footer h2{
-  float: right;
-  font-size: 100%;
-  font-family: 'Raleway', sans-serif;
-  padding-right: 1%;
-}
+
 
 
 /*
