@@ -89,7 +89,7 @@ app.layout = html.Div(children=[
                     html.P("Teacher Production Table")
                 ], className="title"),
 
-            ], className='containBarData'),
+            ], className='containBar'),
         ], className='spacing')
     ], className='row'),
 
