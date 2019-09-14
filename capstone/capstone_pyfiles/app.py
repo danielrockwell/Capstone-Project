@@ -23,7 +23,7 @@ app.layout = html.Div(children=[
                 placeholder="Enter State or 'All'",
                 type="text",
                 value="",
-                style={'width': 150}
+                style={'width': 150},
             ),
             html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
         ], className='first-button'),
@@ -35,14 +35,6 @@ app.layout = html.Div(children=[
                 placeholder="Select Year",
                 style={'width': 120}
             ),
-            # dcc.Input(
-            #     id='year-input',
-            #     placeholder="Enter Year",
-            #     type="text",
-            #     value="",
-            #     style={'width': 120}
-            # ),
-            # html.Button('Enter', id="submit-button", n_clicks=0, style={'width': 100})
         ], className='second-button'),
 
     ],
