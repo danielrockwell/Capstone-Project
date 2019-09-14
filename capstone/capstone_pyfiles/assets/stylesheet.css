@@ -64,14 +64,14 @@ html {
 
 .title {
     position: absolute;
-    top: 10%;
+    top: 9%;
     left: 50%;
     text-align: center;
     transform: translateX(-50%) translateY(-50%);
     color: black;
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 215%;
-    width: 150%;
+    width: 100%;
 }
 
 #bar_chart, #US_map{
