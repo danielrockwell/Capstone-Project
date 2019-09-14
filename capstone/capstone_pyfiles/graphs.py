@@ -79,8 +79,12 @@ def make_US_map(year):
     return fig
 
 
-def make_data_table():
-    df = pd.read_excel('../capstone_data/master_subject.xlsx')
+def make_data_table(state):
+    if state == 'All' or state == "":
+        df = pd.read_excel('../capstone_data/master_subject.xlsx')
+    else:
+        df = pd.read_excel('../capstone_data/master_subject.xlsx')
+        df = df.query("State=='{}'".format(state))
     headerColor = 'grey'
     rowEvenColor = 'lightgrey'
     rowOddColor = 'white'

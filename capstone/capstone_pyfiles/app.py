@@ -68,7 +68,7 @@ app.layout = html.Div(children=[
     html.Div([
         html.Div([
             html.Div([
-                dcc.Graph(id='data_table', figure=make_data_table()),
+                dcc.Graph(id='data_table'),
                 html.Div([
                     html.P("Teacher Production Table")
                 ], className="title"),
@@ -105,6 +105,14 @@ def update_figure(year):
 def update_figure(n_clicks, state):
     barChart = make_bar_chart(state)
     return barChart
+
+@app.callback(Output("data_table", "figure"),
+              [Input("usState-submit-button", "n_clicks")],
+              [State("usState-input", "value")]
+              )
+def update_figure(n_clicks, state):
+    data_table = make_data_table(state)
+    return data_table
 
 
 if __name__ == '__main__':
