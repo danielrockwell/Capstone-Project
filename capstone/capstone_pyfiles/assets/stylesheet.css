@@ -64,17 +64,17 @@ html {
 
 .title {
     position: absolute;
-    bottom: 85%;
-    right: 20%;
+    top: 10%;
+    left: 50%;
     text-align: center;
+    transform: translateX(-50%) translateY(-50%);
     color: black;
-    padding-left: 1%;
-    padding-right: 1%;
     font-family: 'Alegreya Sans', sans-serif;
-    font-size: 200%;
+    font-size: 215%;
+    width: 150%;
 }
 
-#bar_chart, #US_map {
+#bar_chart, #US_map{
     margin-top: 1%;
     border:1px solid black;
     position: relative;
@@ -98,8 +98,12 @@ html {
 
 .containBar {
     position: relative;
+}
 
-
+#data_table {
+    border:1px solid black;
+    padding: 0px;
+    margin: 0px;
 }
 
 .spacing {
