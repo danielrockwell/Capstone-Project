@@ -97,7 +97,7 @@ app.layout = html.Div(children=[
 
 
         html.Div([
-            html.H2("My name is")
+            html.H2("@Copyright 2019 LSU Mathematics Department")
         ], id="lsu_math_site"),
     ],
         className="footer"
