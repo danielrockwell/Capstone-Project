@@ -37,7 +37,7 @@ html {
 .banner > div{
     display: inline-block;
     vertical-align: middle;
-    margin-top: 1%;
+
 }
 
 #usState-submit-button {
@@ -47,7 +47,7 @@ html {
 
 .first-button, .second-button {
     float: right;
-
+    margin-top: 1.2%;
     margin-bottom: 2%;
 }
 
