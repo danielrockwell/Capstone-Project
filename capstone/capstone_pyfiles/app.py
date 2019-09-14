@@ -25,17 +25,32 @@ app.layout = html.Div(children=[
                 value="",
                 style={'width': 150}
             ),
-            html.Button(id="usState-submit-button",children='Enter', n_clicks=0,style={'width': 100})
+            html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
         ], className='first-button'),
         html.Div([
-            dcc.Input(
-                id='year-input',
-                placeholder="Enter Year",
-                type="text",
+            dcc.Dropdown(
+                id='submit-button',
+                options=[
+                    {'label': '2018', 'value': 2018},
+                    {'label': '2017', 'value': 2017},
+                    {'label': '2016', 'value': 2016},
+                    {'label': '2015', 'value': 2015},
+                    {'label': '2014', 'value': 2014},
+                    {'label': '2013', 'value': 2013},
+                    {'label': '2012', 'value': 2012}
+                ],
                 value="",
+                placeholder="Select Year",
                 style={'width': 120}
             ),
-            html.Button('Enter',id="submit-button", n_clicks=0,style={'width': 100})
+            # dcc.Input(
+            #     id='year-input',
+            #     placeholder="Enter Year",
+            #     type="text",
+            #     value="",
+            #     style={'width': 120}
+            # ),
+            # html.Button('Enter', id="submit-button", n_clicks=0, style={'width': 100})
         ], className='second-button'),
 
     ],
@@ -67,7 +82,7 @@ app.layout = html.Div(children=[
     ], className="row"),
 
     html.Div([
-        html.Div([],className="spacing"),
+        html.Div([], className="spacing"),
     ], className='row'),
 
     html.Div([
@@ -81,10 +96,9 @@ app.layout = html.Div(children=[
 
 
 @app.callback(Output("US_map", "figure"),
-              [Input("submit-button", "n_clicks")],
-              [State("year-input", "value")]
+              [Input("submit-button", "value")],
               )
-def update_figure(n_clicks, year):
+def update_figure(year):
     usMap = make_US_map(year)
     return usMap
 

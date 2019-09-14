@@ -31,7 +31,7 @@ html {
    float: right;
    height: 60%;
    padding-top: 0.8%;
-   padding-right: 1%;
+   padding-right: 2%;
 }
 
 .banner > div{
@@ -39,16 +39,22 @@ html {
     vertical-align: middle;
 }
 
-#usState-submit-button, #submit-button {
+#usState-submit-button {
     margin-left: 10px;
     background-color: rgb(102, 128, 140);
 }
 
-.first-button, .second-button {
+.first-button {
 
    background-color: rgb(62, 88, 100);
    margin-bottom: 2%;
 
+}
+
+.second-button {
+    margin-bottom: 2%;
+    background-color: white;
+    border-radius: 4px;
 }
 
 .first-button {
