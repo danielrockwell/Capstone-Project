@@ -39,6 +39,8 @@ def make_bar_chart(state):
 def make_US_map(year):
     if year == "":
         result = pd.read_excel("../capstone_data/all_year_abv.xlsx")
+        result = result.query('ProgramType == "Traditional" and ReportYear == 2018')
+
     else:
         result = pd.read_excel("../capstone_data/all_year_abv.xlsx")
         result = result.query('ProgramType == "Traditional" and ReportYear == {}'.format(year))

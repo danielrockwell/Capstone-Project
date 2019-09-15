@@ -21,7 +21,7 @@ app.layout = html.Div(children=[
         html.Div([
             dcc.Dropdown(
                 id='submit-button',
-                options=[{'label': str(x), 'value': x} for x in range(2012, 2019)],
+                options=[{'label': str(x), 'value': x} for x in range(2018, 2011,-1)],
                 value="",
                 placeholder="Select Year",
                 style={'width': 120}
