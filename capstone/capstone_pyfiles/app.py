@@ -40,7 +40,7 @@ app.layout = html.Div(children=[
     ),
 
     dcc.Tabs(id="tabs-example", children=[
-        dcc.Tab(label='Production of Math Teachers by Year', children=[
+        dcc.Tab(label='Teacher Production Graphs', children=[
             html.Div([
                 html.Div([
                     html.Div([
@@ -78,10 +78,23 @@ app.layout = html.Div(children=[
                 ], className='row'),
             ], id="testing"),
         ]),
-        dcc.Tab(label='Production of Math Teachers by State', children=[html.Div([
+        dcc.Tab(label='Analysis and Statistics', children=[html.Div([
             html.H3('Tab content 2'),
             dcc.Graph(
                 id='graph-2-tabs',
+                figure={
+                    'data': [{
+                        'x': [1, 2, 3],
+                        'y': [5, 10, 6],
+                        'type': 'bar'
+                    }]
+                }
+            )
+        ])]),
+        dcc.Tab(label='Title II Information', children=[html.Div([
+            html.H3('Tab content 3'),
+            dcc.Graph(
+                id='graph-2-tab',
                 figure={
                     'data': [{
                         'x': [1, 2, 3],
