@@ -40,7 +40,7 @@ app.layout = html.Div(children=[
     ),
 
     dcc.Tabs(id="tabs-example", children=[
-        dcc.Tab(label='Tab One', children=[
+        dcc.Tab(label='Production of Math Teachers by Year', children=[
             html.Div([
                 html.Div([
                     html.Div([
@@ -78,7 +78,7 @@ app.layout = html.Div(children=[
                 ], className='row'),
             ], id="testing"),
         ]),
-        dcc.Tab(label='Tab Two', children=[html.Div([
+        dcc.Tab(label='Production of Math Teachers by State', children=[html.Div([
             html.H3('Tab content 2'),
             dcc.Graph(
                 id='graph-2-tabs',
