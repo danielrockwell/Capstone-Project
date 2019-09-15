@@ -9,7 +9,13 @@ This project utilizes the data collected from from Title II from the Higher Educ
 ## First Version of Dashboard:
 
 <p align="center">
-  <img src="/dashboardV1.png" alt="Dashboard Version 1" width="738">
+  <img src="/readme/dashboardV1.png" alt="Dashboard Version 1" width="738">
+</p>
+
+## Second Version of Dashboard:
+
+<p align="center">
+  <img src="/readme/dashboardV2.png" alt="Dashboard Version 1" width="738">
 </p>
 
 ## Tools/Languages Used with Examples:
