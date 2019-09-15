@@ -1,0 +1,4 @@
+capstone_env/
+.DS_Store
+.idea/
+capstone/capstone_pyfiles/__pycache__/
