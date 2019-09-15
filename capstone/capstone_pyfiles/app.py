@@ -6,7 +6,6 @@ from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_d
 import pandas as pd
 import plotly.express as px
 
-YEAR = 0
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
 
