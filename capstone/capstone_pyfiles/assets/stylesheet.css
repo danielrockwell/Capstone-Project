@@ -36,16 +36,30 @@ html {
    padding-right: 2vh;
 }
 
+.submit-container {
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-top: 1.5vh;
+}
 
-.banner > div{
+
+#f_button, #s_button{
     display: inline-block;
-    vertical-align: middle;
 }
 
 
+#s_button {
+    margin-left: 6vh;
+    margin-right: 4vh;
+    vertical-align: center;
+}
+
+/*
 .f_button, .s_button {
-    margin-bottom: 2vh;
+    margin-top: 1.3vh;
 }
+
 
 .f_button {
     margin-left: 120vh;
@@ -54,29 +68,12 @@ html {
 .s_button {
     margin-left: 3%;
 }
-
+*/
 #usState-submit-button {
 
     margin-left: 10px;
     background-color: rgb(102, 128, 140);
 
-}
-
-.first-button, .second-button {
-    float: right;
-    margin-top: 1.2%;
-    margin-bottom: 2%;
-}
-
-.second-button {
-    background-color: white;
-    border-radius: 4px;
-    margin-left: 3%;
-    margin-right: 4%;
-}
-
-.first-button {
-    background-color: rgb(62, 88, 100);
 }
 
 .title {

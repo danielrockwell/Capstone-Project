@@ -30,8 +30,8 @@ def make_bar_chart(state):
 
     )
 
-    # barChart.update_xaxes(title_font=dict(size=25))
-    # barChart.update_yaxes(title_font=dict(size=25))
+    barChart.update_xaxes(title_font=dict(size=25))
+    barChart.update_yaxes(title_font=dict(size=25))
     return barChart
 
 

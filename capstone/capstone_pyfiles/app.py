@@ -17,24 +17,26 @@ app.layout = html.Div(children=[
         html.H2("Mathematics Teacher Production Dashboard"),
         html.Img(src="/assets/lsu_logo.png"),
         html.Div([
-            dcc.Input(
-                id='usState-input',
-                placeholder="Enter State or 'All'",
-                type="text",
-                value="",
-                style={'width': 150},
-            ),
-            html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
-        ], className='f_button'),
-        html.Div([
-            dcc.Dropdown(
-                id='submit-button',
-                options=[{'label': str(x), 'value': x} for x in range(2018, 2011, -1)],
-                value="",
-                placeholder="Select Year",
-                style={'width': 120}
-            ),
-        ], className='s_button'),
+            html.Div([
+                dcc.Input(
+                    id='usState-input',
+                    placeholder="Enter State or 'All'",
+                    type="text",
+                    value="",
+                    style={'width': 150},
+                ),
+                html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
+            ], id='f_button'),
+            html.Div([
+                dcc.Dropdown(
+                    id='submit-button',
+                    options=[{'label': str(x), 'value': x} for x in range(2018, 2011, -1)],
+                    value="",
+                    placeholder="Select Year",
+                    style={'width': 120}
+                ),
+            ], id='s_button')
+        ], className="submit-container"),
     ],
         className="banner"
     ),
@@ -67,12 +69,12 @@ app.layout = html.Div(children=[
 
                 html.Div([
                     html.Div([
-                            dcc.Graph(id='data_table'),
-                            html.Div([
-                                html.P("Teacher Production Table")
-                            ], className="title"),
+                        dcc.Graph(id='data_table'),
+                        html.Div([
+                            html.P("Teacher Production Table")
+                        ], className="title"),
 
-                        ], className='cB'),
+                    ], className='cB'),
                 ], className='row'),
             ], id="testing"),
         ]),
@@ -114,6 +116,7 @@ app.layout = html.Div(children=[
     ),
 
 ], className="all")
+
 
 @app.callback(Output("US_map", "figure"),
               [Input("submit-button", "value")],
