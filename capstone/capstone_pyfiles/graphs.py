@@ -120,7 +120,7 @@ def make_data_table(state):
             b=20,
             t=60),
         autosize=True,
-        height=400
+
     )
 
     return fig

@@ -67,14 +67,12 @@ app.layout = html.Div(children=[
 
                 html.Div([
                     html.Div([
-                        html.Div([
                             dcc.Graph(id='data_table'),
                             html.Div([
                                 html.P("Teacher Production Table")
                             ], className="title"),
 
-                        ], className='containBar'),
-                    ], className='spacing')
+                        ], className='cB'),
                 ], className='row'),
             ], id="testing"),
         ]),
