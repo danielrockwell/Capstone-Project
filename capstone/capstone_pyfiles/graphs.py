@@ -22,6 +22,7 @@ def make_bar_chart(state):
         # title_font_size=70,
         font_family="Open Sans",
         autosize=True,
+        margin_b=0,
         # margin={"l": 0,
         #         "r": 0,
         #         "t":0,

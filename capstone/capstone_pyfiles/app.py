@@ -1,7 +1,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Output, Input, State
+from dash.dependencies import Input, Output, State, ClientsideFunction
 from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table
 import pandas as pd
 import plotly.express as px
@@ -12,7 +12,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'Title II Dashboard'
 app.layout = html.Div(children=[
-
+    html.Div(id="output-clientside"),
     html.Div([
         html.H2("Mathematics Teacher Production Dashboard"),
         html.Img(src="/assets/lsu_logo.png"),
@@ -143,6 +143,12 @@ def update_figure(n_clicks, state):
     data_table = make_data_table(state)
     return data_table
 
+
+app.clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="resize"),
+    Output("output-clientside", "children"),
+    [Input("bar_chart", "figure")],
+)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
