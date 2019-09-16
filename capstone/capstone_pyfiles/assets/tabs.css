@@ -5,3 +5,24 @@
     font-size: 150%;
     font-family: 'Alegreya Sans', sans-serif;
 }
+
+
+#testH3 {
+    height: 100px;
+    background-color: green;
+}
+
+#parentContainer {
+    display: flex;
+    background-color: yellow;
+    justify-content: center;
+    align-items: center;
+}
+
+#tab2Container {
+    background-color: red;
+    padding: 1vh;
+    height: 100%;
+
+}
+

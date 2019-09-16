@@ -78,19 +78,44 @@ app.layout = html.Div(children=[
                 ], className='row'),
             ], id="testing"),
         ]),
-        dcc.Tab(label='Analysis and Statistics', children=[html.Div([
-            html.H3('Tab content 2'),
-            dcc.Graph(
-                id='graph-2-tabs',
-                figure={
-                    'data': [{
-                        'x': [1, 2, 3],
-                        'y': [5, 10, 6],
-                        'type': 'bar'
-                    }]
-                }
-            ),
-        ])]),
+        dcc.Tab(label='Analysis and Statistics', children=[
+            html.Div([
+                html.Div([
+                    html.Div([
+                        html.H3('Tab content 2', id="testH3"),
+                    ], className='two columns'),
+                ], className='row'),
+                html.Div([
+                    html.Div([
+                        html.Div([
+                            html.H2("Heading"),
+                            html.P(
+                                """\
+                                Donec id elit non mi porta gravida at eget metus.
+                                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+                                nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+                                malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non
+                                mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+                                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+                                amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
+                                odio dui."""
+                            ),
+                        ], className='four columns', id='tab2Container'),
+                        html.Div([dcc.Graph(
+                            id='graph-2-tabs',
+                            figure={
+                                'data': [{
+                                    'x': [1, 2, 3],
+                                    'y': [5, 10, 6],
+                                    'type': 'bar'
+                                }]
+                            }
+                        ), ], className='eight columns'),
+                    ], className='row',id='parentContainer'),
+                ],className='ten columns offset-by-one')
+
+            ], className='ten columns offset-by-one')
+        ]),
         dcc.Tab(label='Title II Information', children=[html.Div([
             html.H3('Tab content 3'),
             dcc.Graph(
