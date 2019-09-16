@@ -7,7 +7,7 @@ window.dash_clientside.clientside = {
         setTimeout(function() {
             window.dispatchEvent(new Event("resize"));
             console.log("fired resize");
-        }, 500);
+        }, 0);
     return null;
     },
 };
