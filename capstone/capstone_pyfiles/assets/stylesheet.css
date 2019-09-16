@@ -32,8 +32,8 @@ html {
    position=relative;
    float: right;
    height: 60%;
-   padding-top: 0.8%;
-   padding-right: 2%;
+   padding-top: 1vh;
+   padding-right: 2vh;
 }
 
 
@@ -44,11 +44,11 @@ html {
 
 
 .f_button, .s_button {
-    margin-bottom: 1.5%;
+    margin-bottom: 2vh;
 }
 
 .f_button {
-    margin-left: 28%;
+    margin-left: 120vh;
 }
 
 .s_button {
@@ -91,37 +91,40 @@ html {
     width: 100%;
 }
 
+.containBar {
+    position: relative;
+    /*
+    padding: 5px;
+    background-color: green;
+    */
+}
+
 #bar_chart, #US_map{
+    height: 40vh;
     margin-top: 0%;
     border:1.5px solid black;
-    position: relative;
     padding-right: 3%;
     padding-left: 3%;
+    padding-top: 4%;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #bar_chart {
    margin-left: 5%;
-   margin-top: 0%;
 }
 
 #US_map {
     margin-right: 5%;
-    margin-top: 0%;
 }
 
 .row {
     background-color: rgb(0,0,0,0);
 }
 
-.containBar {
-    position: relative;
-}
-
 .cB {
     position: relative;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 1%;
     margin-right: 1%;
 
@@ -131,18 +134,11 @@ html {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border:1.5px solid black;
     height: 40vh;
-}
-
-/*
-.spacing {
-    border:1.5px solid black;
+    padding-top: 3%;
     background-color: white;
-    margin-left: 2.35%;
-    margin-right: 2.35%;
-    margin-top: 2%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-left: 1.4%;
+    margin-right: 1.4%;
 }
-*/
 
 .footer h2{
   float: right;

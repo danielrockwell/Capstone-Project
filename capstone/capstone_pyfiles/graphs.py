@@ -19,7 +19,7 @@ def make_bar_chart(state):
         #         state == 'All' or state == "") else "Number of Math Teachers in {} Produced by Year".format(
         #     state),
         # title_x=.5,
-        # title_font_size=30,
+        # title_font_size=70,
         font_family="Open Sans",
         autosize=True,
         # margin={"l": 0,
@@ -27,7 +27,6 @@ def make_bar_chart(state):
         #         "t":0,
         #         "b":0},
         plot_bgcolor='rgba(0,0,0,0)',
-        height=450
 
     )
 
@@ -76,7 +75,6 @@ def make_US_map(year):
             t=0),
         geo_scope='usa',
         autosize=True,
-        height=450
     )
     return fig
 
@@ -118,7 +116,7 @@ def make_data_table(state):
             l=20,
             r=20,
             b=20,
-            t=60),
+            t=0),
         autosize=True,
 
     )
