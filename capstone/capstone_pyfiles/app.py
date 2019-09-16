@@ -89,7 +89,7 @@ app.layout = html.Div(children=[
                         'type': 'bar'
                     }]
                 }
-            )
+            ),
         ])]),
         dcc.Tab(label='Title II Information', children=[html.Div([
             html.H3('Tab content 3'),
