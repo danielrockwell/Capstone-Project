@@ -2,3 +2,5 @@ capstone_env/
 .DS_Store
 .idea/
 capstone/capstone_pyfiles/__pycache__/
+capstone/capstone_pyfiles/testing/__pycache__/
+
