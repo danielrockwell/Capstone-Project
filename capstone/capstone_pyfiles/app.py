@@ -1,83 +1,110 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Output, Input, State
+from dash.dependencies import Input, Output, State, ClientsideFunction
 from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table
 import pandas as pd
 import plotly.express as px
 
-YEAR = 0
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'Title II Dashboard'
 app.layout = html.Div(children=[
-
+    html.Div(id="output-clientside"),
     html.Div([
         html.H2("Mathematics Teacher Production Dashboard"),
         html.Img(src="/assets/lsu_logo.png"),
-
         html.Div([
-            dcc.Dropdown(
-                id='submit-button',
-                options=[{'label': str(x), 'value': x} for x in range(2018, 2011,-1)],
-                value="",
-                placeholder="Select Year",
-                style={'width': 120}
-            ),
-        ], className='second-button'),
-
-        html.Div([
-            dcc.Input(
-                id='usState-input',
-                placeholder="Enter State or 'All'",
-                type="text",
-                value="",
-                style={'width': 150},
-            ),
-            html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
-        ], className='first-button'),
-
+            html.Div([
+                dcc.Input(
+                    id='usState-input',
+                    placeholder="Enter State or 'All'",
+                    type="text",
+                    value="",
+                    style={'width': 150},
+                ),
+                html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
+            ], id='f_button'),
+            html.Div([
+                dcc.Dropdown(
+                    id='submit-button',
+                    options=[{'label': str(x), 'value': x} for x in range(2018, 2011, -1)],
+                    value="",
+                    placeholder="Select Year",
+                    style={'width': 120}
+                ),
+            ], id='s_button')
+        ], className="submit-container"),
     ],
         className="banner"
     ),
 
-    html.Div([
-
-        html.Div([
+    dcc.Tabs(id="tabs-example", children=[
+        dcc.Tab(label='Teacher Production Graphs', children=[
             html.Div([
-                dcc.Graph(id='bar_chart'),
                 html.Div([
-                    html.P("Production of Math Teachers by Year")
-                ], className="title"),
+                    html.Div([
+                        html.Div([
+                            dcc.Graph(id='bar_chart'),
+                            html.Div([
+                                html.P("Production of Math Teachers by Year")
+                            ], className="title"),
 
-            ], className='containBar'),
-        ], className="six columns"),
+                        ], className='containBar'),
+                    ], className="six columns"),
 
-        html.Div([
-            html.Div([
-                dcc.Graph(id='US_map'),
+                    html.Div([
+                        html.Div([
+                            dcc.Graph(id='US_map'),
+                            html.Div([
+                                html.P("Production of Math Teachers by State")
+                            ], className="title"),
+
+                        ], className='containBar'),
+                    ], className="six columns"),
+
+                ], className="row"),
+
                 html.Div([
-                    html.P("Production of Math Teachers by State")
-                ], className="title"),
+                    html.Div([
+                        dcc.Graph(id='data_table'),
+                        html.Div([
+                            html.P("Teacher Production Table")
+                        ], className="title"),
 
-            ], className='containBar'),
-        ], className="six columns"),
-
-    ], className="row"),
-
-    html.Div([
-        html.Div([
-            html.Div([
-                dcc.Graph(id='data_table'),
-                html.Div([
-                    html.P("Teacher Production Table")
-                ], className="title"),
-
-            ], className='containBar'),
-        ], className='spacing')
-    ], className='row'),
+                    ], className='cB'),
+                ], className='row'),
+            ], id="testing"),
+        ]),
+        dcc.Tab(label='Analysis and Statistics', children=[html.Div([
+            html.H3('Tab content 2'),
+            dcc.Graph(
+                id='graph-2-tabs',
+                figure={
+                    'data': [{
+                        'x': [1, 2, 3],
+                        'y': [5, 10, 6],
+                        'type': 'bar'
+                    }]
+                }
+            ),
+        ])]),
+        dcc.Tab(label='Title II Information', children=[html.Div([
+            html.H3('Tab content 3'),
+            dcc.Graph(
+                id='graph-2-tab',
+                figure={
+                    'data': [{
+                        'x': [1, 2, 3],
+                        'y': [5, 10, 6],
+                        'type': 'bar'
+                    }]
+                }
+            )
+        ])]),
+    ]),
 
     html.Div([
 
@@ -116,6 +143,12 @@ def update_figure(n_clicks, state):
     data_table = make_data_table(state)
     return data_table
 
+
+app.clientside_callback(
+    ClientsideFunction(namespace="clientside", function_name="resize"),
+    Output("output-clientside", "children"),
+    [Input("bar_chart", "figure")],
+)
 
 if __name__ == '__main__':
     app.run_server(debug=True)
