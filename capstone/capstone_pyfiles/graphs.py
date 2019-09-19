@@ -123,3 +123,16 @@ def make_data_table(state):
     )
 
     return fig
+
+def create_donut_chart():
+    dfs = pd.read_excel("../capstone_data/program_count.xlsx")
+    dfs = dfs.query("State == 'Louisiana' and ReportYear==2018")
+
+    labels = dfs["ProgramType"]
+    values = dfs["counts"]
+    #
+    # Use `hole` to create a donut-like pie chart
+    fig = plotgr.Figure(data=[plotgr.Pie(labels=labels, values=values, hole=.6)])
+
+    fig.update_traces(textinfo='value')
+    return fig

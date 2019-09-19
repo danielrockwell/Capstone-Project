@@ -2,7 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State, ClientsideFunction
-from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table
+from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table, create_donut_chart
 import pandas as pd
 import plotly.express as px
 
@@ -82,13 +82,14 @@ app.layout = html.Div(children=[
             html.H3('Tab content 2'),
             dcc.Graph(
                 id='graph-2-tabs',
-                figure={
-                    'data': [{
-                        'x': [1, 2, 3],
-                        'y': [5, 10, 6],
-                        'type': 'bar'
-                    }]
-                }
+                figure= create_donut_chart()
+                # {
+                #     'data': [{
+                #         'x': [1, 2, 3],
+                #         'y': [5, 10, 6],
+                #         'type': 'bar'
+                #     }]
+                # }
             ),
         ])]),
         dcc.Tab(label='Title II Information', children=[html.Div([
