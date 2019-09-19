@@ -81,7 +81,7 @@ app.layout = html.Div(children=[
         dcc.Tab(label='Analysis and Statistics', children=[
             html.Div([
                 html.Div([
-                    # html.H3('Tab content 2'),
+                    html.H3('Program Types'),
                     dcc.Graph(
                         id='donut-graph',
                         figure=create_donut_chart()
@@ -93,9 +93,9 @@ app.layout = html.Div(children=[
                         #     }]
                         # }
                     ),
-                ], className="six columns"),
+                ], className="six columns",id="pie-div"),
                 html.Div([
-                    # html.H3('Tab content 2'),
+                    html.H3('Program Types by Year'),
                     dcc.Graph(
                         id='stacked-bar',
                         figure=create_stacked_bar()
@@ -107,7 +107,7 @@ app.layout = html.Div(children=[
                         #     }]
                         # }
                     ),
-                ], className="six columns"),
+                ], className="six columns",id="bar-div"),
             ], className="ten columns offset-by-one", id="tab2_main")
         ]),
         dcc.Tab(label='Title II Information', children=[html.Div([

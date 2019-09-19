@@ -99,7 +99,7 @@ def make_data_table(state):
 
         cells=dict(values=[df.State, df.ReportYear, df.ProgramType, df.Category, df.Prepared],
                    line_color='darkslategray',
-                   fill_color=[[rowOddColor, rowEvenColor, rowOddColor, rowEvenColor] * (len(df)//4)],
+                   fill_color=[[rowOddColor, rowEvenColor, rowOddColor, rowEvenColor] * (len(df) // 4)],
                    align=['left', 'center'],
                    font=dict(color='darkslategray', size=11)))
     ])
@@ -123,6 +123,7 @@ def make_data_table(state):
     )
 
     return fig
+
 
 def create_donut_chart():
     dfs = pd.read_excel("../capstone_data/program_count.xlsx")
@@ -149,6 +150,7 @@ def create_donut_chart():
 
     return fig
 
+
 def create_stacked_bar():
     dfs = pd.read_excel("../capstone_data/program_count.xlsx")
     dfs = dfs.groupby(['ReportYear', 'ProgramType'], as_index=False)['counts'].sum()
@@ -169,5 +171,6 @@ def create_stacked_bar():
                           r=10,
                           b=10,
                           t=10),
+                      plot_bgcolor='rgba(0,0,0,0)'
                       )
     return fig
