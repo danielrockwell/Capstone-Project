@@ -2,7 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State, ClientsideFunction
-from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table, create_donut_chart
+from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table, create_donut_chart,create_stacked_bar
 import pandas as pd
 import plotly.express as px
 
@@ -78,31 +78,43 @@ app.layout = html.Div(children=[
                 ], className='row'),
             ], id="testing"),
         ]),
-        dcc.Tab(label='Analysis and Statistics', children=[html.Div([
-            html.H3('Tab content 2'),
-            dcc.Graph(
-                id='graph-2-tabs',
-                figure= create_donut_chart()
-                # {
-                #     'data': [{
-                #         'x': [1, 2, 3],
-                #         'y': [5, 10, 6],
-                #         'type': 'bar'
-                #     }]
-                # }
-            ),
-        ])]),
+        dcc.Tab(label='Analysis and Statistics', children=[
+            html.Div([
+                html.Div([
+                    # html.H3('Tab content 2'),
+                    dcc.Graph(
+                        id='donut-graph',
+                        figure=create_donut_chart()
+                        # {
+                        #     'data': [{
+                        #         'x': [1, 2, 3],
+                        #         'y': [5, 10, 6],
+                        #         'type': 'bar'
+                        #     }]
+                        # }
+                    ),
+                ], className="six columns"),
+                html.Div([
+                    # html.H3('Tab content 2'),
+                    dcc.Graph(
+                        id='stacked-bar',
+                        figure=create_stacked_bar()
+                        # {
+                        #     'data': [{
+                        #         'x': [1, 2, 3],
+                        #         'y': [5, 10, 6],
+                        #         'type': 'bar'
+                        #     }]
+                        # }
+                    ),
+                ], className="six columns"),
+            ], className="ten columns offset-by-one", id="tab2_main")
+        ]),
         dcc.Tab(label='Title II Information', children=[html.Div([
             html.H3('Tab content 3'),
             dcc.Graph(
                 id='graph-2-tab',
-                figure={
-                    'data': [{
-                        'x': [1, 2, 3],
-                        'y': [5, 10, 6],
-                        'type': 'bar'
-                    }]
-                }
+                figure=create_donut_chart(),
             )
         ])]),
     ]),

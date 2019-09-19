@@ -135,4 +135,39 @@ def create_donut_chart():
     fig = plotgr.Figure(data=[plotgr.Pie(labels=labels, values=values, hole=.6)])
 
     fig.update_traces(textinfo='value')
+
+    fig.update_layout(
+        # Add annotations in the center of the donut pies.
+        annotations=[dict(text='Program Type', x=0.5, y=0.5, font_size=20, showarrow=False)],
+        legend=dict(x=-.1, y=1),
+        margin=plotgr.layout.Margin(
+            l=10,
+            r=10,
+            b=10,
+            t=10),
+    )
+
+    return fig
+
+def create_stacked_bar():
+    dfs = pd.read_excel("../capstone_data/program_count.xlsx")
+    dfs = dfs.groupby(['ReportYear', 'ProgramType'], as_index=False)['counts'].sum()
+    # print(dfs)
+    df2 = dfs[dfs["ProgramType"] == "Alternative, IHE-based"]
+    df1 = dfs[dfs["ProgramType"] == "Traditional"]
+    df3 = dfs[dfs["ProgramType"] == "Alternative, not IHE-based"]
+
+    fig = plotgr.Figure(data=[
+        plotgr.Bar(name='Traditional', x=df1["ReportYear"], y=df1["counts"]),
+        plotgr.Bar(name='Alternative, IHE-based', x=df2["ReportYear"], y=df2["counts"]),
+        plotgr.Bar(name='Alternative, not IHE-based', x=df3["ReportYear"], y=df3["counts"])
+    ])
+    # Change the bar mode
+    fig.update_layout(barmode='stack',
+                      margin=plotgr.layout.Margin(
+                          l=10,
+                          r=10,
+                          b=10,
+                          t=10),
+                      )
     return fig
