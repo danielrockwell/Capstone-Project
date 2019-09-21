@@ -37,63 +37,57 @@ app.layout = html.Div(children=[
                     style={'width': 120}
                 ),
             ], id='s_button')
-        ], className="submit-container"),
+        ], id="submit-container"),
     ],
         className="banner"
     ),
+
+    # html.Div([
+    #    html.H2("HELLO WORLD")
+    # ]),
 
     dcc.Tabs(id="tabs-example", children=[
         dcc.Tab(label='Teacher Production Graphs', children=[
             html.Div([
                 html.Div([
                     html.Div([
-                        html.H3("Chart 1"),
+                        html.H3("Production of Math Teachers by Year"),
                         dcc.Graph(id='bar_chart',
-                                  style={'height':'51vh'}),
+                                  style={'height': '40vh'}),
                     ], className="six columns", id="barchart-div"),
 
                     html.Div([
-                        html.H3("Chart 1"),
-                        dcc.Graph(id='US_map'),
+                        html.H3("Production of Math Teachers by State"),
+                        dcc.Graph(id='US_map',
+                                  style={'height': '40vh'}),
                     ], className="six columns", id="map-div"),
 
                     html.Div([
-                        html.H3("Chart 1"),
-                        dcc.Graph(id='data_table'),
+                        html.H3("Teacher Production Table"),
+                        dcc.Graph(id='data_table',
+                                  style={'height': '50vh'}),
                     ], className="twelve columns", id="table-div"),
-                ], className="row")
-            ],className="ten columns offset-by-one")
+                ], className="row", id="tab1-graphs")
+            ], className="ten columns offset-by-one")
         ]),
         dcc.Tab(label='Analysis and Statistics', children=[
             html.Div([
                 html.Div([
-                    html.H3('Program Types'),
-                    dcc.Graph(
-                        id='donut-graph',
-                        figure=create_donut_chart()
-                        # {
-                        #     'data': [{
-                        #         'x': [1, 2, 3],
-                        #         'y': [5, 10, 6],
-                        #         'type': 'bar'
-                        #     }]
-                        # }
-                    ),
-                ], className="six columns", id="pie-div"),
-                html.Div([
-                    html.H3('Program Types by Year'),
-                    dcc.Graph(
-                        id='stacked-bar',
-                        figure=create_stacked_bar()
-                        # {
-                        #     'data': [{
-                        #         'x': [1, 2, 3],
-                        #         'y': [5, 10, 6],
-                        #         'type': 'bar'
-                        #     }]
-                        # }
-                    ),
-                ], className="six columns", id="bar-div"),
+                    html.Div([
+                        html.H3('Program Types'),
+                        dcc.Graph(
+                            id='donut-graph',
+                            figure=create_donut_chart()
+                        ),
+                    ], className="six columns", id="pie-div"),
+                    html.Div([
+                        html.H3('Program Types by Year'),
+                        dcc.Graph(
+                            id='stacked-bar',
+                            figure=create_stacked_bar()
+                        ),
+                    ], className="six columns", id="bar-div"),
+                ], className="row", id="tab2-graphs")
             ], className="ten columns offset-by-one", id="tab2_main")
         ]),
         dcc.Tab(label='Title II Information', children=[html.Div([
