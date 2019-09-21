@@ -2,7 +2,8 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State, ClientsideFunction
-from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table, create_donut_chart,create_stacked_bar
+from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table, create_donut_chart, \
+    create_stacked_bar
 import pandas as pd
 import plotly.express as px
 
@@ -46,37 +47,22 @@ app.layout = html.Div(children=[
             html.Div([
                 html.Div([
                     html.Div([
-                        html.Div([
-                            dcc.Graph(id='bar_chart'),
-                            html.Div([
-                                html.P("Production of Math Teachers by Year")
-                            ], className="title"),
-
-                        ], className='containBar'),
-                    ], className="six columns"),
+                        html.H3("Chart 1"),
+                        dcc.Graph(id='bar_chart',
+                                  style={'height':'51vh'}),
+                    ], className="six columns", id="barchart-div"),
 
                     html.Div([
-                        html.Div([
-                            dcc.Graph(id='US_map'),
-                            html.Div([
-                                html.P("Production of Math Teachers by State")
-                            ], className="title"),
+                        html.H3("Chart 1"),
+                        dcc.Graph(id='US_map'),
+                    ], className="six columns", id="map-div"),
 
-                        ], className='containBar'),
-                    ], className="six columns"),
-
-                ], className="row"),
-
-                html.Div([
                     html.Div([
+                        html.H3("Chart 1"),
                         dcc.Graph(id='data_table'),
-                        html.Div([
-                            html.P("Teacher Production Table")
-                        ], className="title"),
-
-                    ], className='cB'),
-                ], className='row'),
-            ], id="testing"),
+                    ], className="twelve columns", id="table-div"),
+                ], className="row")
+            ],className="ten columns offset-by-one")
         ]),
         dcc.Tab(label='Analysis and Statistics', children=[
             html.Div([
@@ -93,7 +79,7 @@ app.layout = html.Div(children=[
                         #     }]
                         # }
                     ),
-                ], className="six columns",id="pie-div"),
+                ], className="six columns", id="pie-div"),
                 html.Div([
                     html.H3('Program Types by Year'),
                     dcc.Graph(
@@ -107,7 +93,7 @@ app.layout = html.Div(children=[
                         #     }]
                         # }
                     ),
-                ], className="six columns",id="bar-div"),
+                ], className="six columns", id="bar-div"),
             ], className="ten columns offset-by-one", id="tab2_main")
         ]),
         dcc.Tab(label='Title II Information', children=[html.Div([

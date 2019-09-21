@@ -22,11 +22,10 @@ def make_bar_chart(state):
         # title_font_size=70,
         font_family="Open Sans",
         autosize=True,
-        margin_b=0,
-        # margin={"l": 0,
+        # margin={"l": 50,
         #         "r": 0,
         #         "t":0,
-        #         "b":0},
+        #         "b":50},
         plot_bgcolor='rgba(0,0,0,0)',
 
     )
@@ -72,7 +71,7 @@ def make_US_map(year):
         margin=plotgr.layout.Margin(
             l=0,
             r=0,
-            b=0,
+            b=70,
             t=0),
         geo_scope='usa',
         autosize=True,
@@ -117,7 +116,7 @@ def make_data_table(state):
             l=20,
             r=20,
             b=20,
-            t=0),
+            t=20),
         autosize=True,
 
     )

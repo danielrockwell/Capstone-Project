@@ -1,0 +1,19 @@
+#barchart-div,#map-div,#table-div {
+    background-color: white;
+    border:1.5px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#barchart-div,#map-div,#table-div h3 {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+
+
+#table-div {
+    margin-top: 5vh;
+}
+
