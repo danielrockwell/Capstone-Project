@@ -12,15 +12,15 @@ def make_bar_chart(state):
     barChart = px.bar(data_years,
                       x="ReportYear", y="Prepared",
                       hover_data=['State', 'Prepared'],
-                      labels={'ReportYear': "{}".format(state), 'Prepared': "Teachers (in Thousands)"}
+                      labels={'ReportYear': "{}".format(state), 'Prepared': ""}
                       )
     barChart.update_layout(
         font_family="Open Sans",
         autosize=True,
-        # margin={"l": 50,
-        #         "r": 0,
-        #         "t":0,
-        #         "b":50},
+        margin={"l": 0,
+                "r": 40,
+                "t":0,
+                "b":0},
         plot_bgcolor='rgba(0,0,0,0)',
 
     )
