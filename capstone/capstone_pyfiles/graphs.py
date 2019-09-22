@@ -15,11 +15,6 @@ def make_bar_chart(state):
                       labels={'ReportYear': "{}".format(state), 'Prepared': "Teachers (in Thousands)"}
                       )
     barChart.update_layout(
-        # title="Number of Math Teachers Produced by Year" if (
-        #         state == 'All' or state == "") else "Number of Math Teachers in {} Produced by Year".format(
-        #     state),
-        # title_x=.5,
-        # title_font_size=70,
         font_family="Open Sans",
         autosize=True,
         # margin={"l": 50,
@@ -60,14 +55,6 @@ def make_US_map(year):
     )
 
     fig.update_layout(
-        # title=plotgr.layout.Title(
-        #     text="{} Prepared Traditional Math Teachers by State".format(year),
-        #     xref="paper",
-        #     x=.5,
-        #     y=1,
-        #     font_family="Open Sans",
-        #     font_size=30,
-        # ),
         margin=plotgr.layout.Margin(
             l=0,
             r=0,
@@ -104,14 +91,6 @@ def make_data_table(state):
     ])
 
     fig.update_layout(
-        # title=plotgr.layout.Title(
-        #     text="{} Prepared Traditional Math Teachers by State".format(year),
-        #     xref="paper",
-        #     x=.5,
-        #     y=1,
-        #     font_family="Open Sans",
-        #     font_size=30,
-        # ),
         margin=plotgr.layout.Margin(
             l=20,
             r=20,
@@ -130,8 +109,7 @@ def create_donut_chart():
 
     labels = dfs["ProgramType"]
     values = dfs["counts"]
-    #
-    # Use `hole` to create a donut-like pie chart
+
     fig = plotgr.Figure(data=[plotgr.Pie(labels=labels, values=values, hole=.6)])
 
     fig.update_traces(textinfo='value')

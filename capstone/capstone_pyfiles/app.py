@@ -4,8 +4,6 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State, ClientsideFunction
 from capstone.capstone_pyfiles.graphs import make_bar_chart, make_US_map, make_data_table, create_donut_chart, \
     create_stacked_bar
-import pandas as pd
-import plotly.express as px
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap']
@@ -16,7 +14,9 @@ app.layout = html.Div(children=[
     html.Div(id="output-clientside"),
     html.Div([
         html.H2("Mathematics Teacher Production Dashboard"),
-        html.Img(src="/assets/lsu_logo.png"),
+        html.Div([
+            html.Img(src="/assets/lsu_logo.png",id="img_in_flex"),
+        ],id="img-flex"),
         html.Div([
             html.Div([
                 dcc.Input(
@@ -41,10 +41,6 @@ app.layout = html.Div(children=[
     ],
         className="banner"
     ),
-
-    # html.Div([
-    #    html.H2("HELLO WORLD")
-    # ]),
 
     dcc.Tabs(id="tabs-example", children=[
         dcc.Tab(label='Teacher Production Graphs', children=[

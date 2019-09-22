@@ -27,18 +27,38 @@ html {
 
 }
 
-.banner Img{
-   position=relative;
-   float: right;
-   height: 60%;
-   padding-top: 1vh;
-   padding-right: 2vh;
+#img-flex {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin-right: 2vh;
 }
 
+#img_in_flex {
+    height: 3.7vh;
+}
+
+
 #submit-container {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    align-items: center;
+    justify-content: center;
     float: right;
-    margin-top: 1.7vh;
 }
 
 
@@ -66,100 +86,3 @@ html {
   font-family: 'Raleway', sans-serif;
   padding-right: 1%;
 }
-
-
-/*
-.f_button, .s_button {
-    margin-top: 1.3vh;
-}
-
-
-.f_button {
-    margin-left: 120vh;
-}
-
-.s_button {
-    margin-left: 3%;
-}
-*/
-
-/*
-#usState-submit-button {
-
-    margin-left: 10px;
-    background-color: rgb(102, 128, 140);
-
-}
-
-.title {
-    position: absolute;
-    top: 7%;
-    left: 50%;
-    text-align: center;
-    transform: translateX(-50%) translateY(-50%);
-    color: black;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 215%;
-    width: 100%;
-}
-
-.containBar {
-    position: relative;
-    /*
-    padding: 5px;
-    background-color: green;
-    */
-}
-/*
-#bar_chart, #US_map{
-    height: 40vh;
-    margin-top: 0%;
-    border:1.5px solid black;
-    padding-right: 3%;
-    padding-left: 3%;
-    padding-top: 4%;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#bar_chart {
-   margin-left: 5%;
-}
-
-#US_map {
-    margin-right: 5%;
-}
-
-.row {
-    background-color: rgb(0,0,0,0);
-}
-
-.cB {
-    position: relative;
-    margin-top: 2%;
-    margin-left: 1%;
-    margin-right: 1%;
-
-}
-
-
-#data_table {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border:1.5px solid black;
-    height: 40vh;
-    padding-top: 3%;
-    background-color: white;
-    margin-left: 1.4%;
-    margin-right: 1.4%;
-}
-*/
-
-
-/*
-#testing {
-    background-color: green;
-    padding: 10px;
-}
-
-background-image: linear-gradient(red, yellow);
-*/
