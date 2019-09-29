@@ -1,0 +1,30 @@
+#jumbo p{
+    font-size: 200%;
+    font-family: 'Raleway', sans-serif;
+}
+
+#jumbo {
+    margin-top:100;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+#title2-text {
+
+    text-align: center;
+    background-color: green;
+    padding-bottom:2vh;
+    padding-top:2vh;
+}
+
+#card-text {
+    font-size: 2vh;
+    font-family: 'Raleway', sans-serif;
+    text-align-center;
+}
+
+#card-container {
+    display: flex;
+    width: 95%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

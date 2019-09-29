@@ -82,7 +82,7 @@ app.layout = html.Div(children=[
                     placeholder="Enter State or 'All'",
                     type="text",
                     value="",
-                    style={'width': 150},
+                    style={'width': 150, },
                 ),
                 html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
             ], id='f_button'),
@@ -100,9 +100,9 @@ app.layout = html.Div(children=[
         className="banner"
     ),
 
-    dcc.Tabs(id="tabs-example", style={'font-size': '300%',},
+    dcc.Tabs(id="tabs-example", style={'font-size': '300%', },
              children=[
-                 dcc.Tab(id="tab1",label='Teacher Production Graphs',
+                 dcc.Tab(id="tab1", label='Teacher Production Graphs',
                          children=[
                              html.Div([
                                  html.Div([
@@ -148,9 +148,55 @@ app.layout = html.Div(children=[
                  ]),
                  dcc.Tab(label='Title II Information', children=[
                      html.Div([
-                         navbar,
-                         body
-                     ])
+                         dbc.Row(
+                             [
+                                 dbc.Col([
+                                     dbc.Jumbotron(
+                                         [
+                                             html.H1("Title II", className="display-3"),
+                                             html.P(
+                                                 "General information about Title II",
+                                                 className="lead",
+                                             ),
+                                             html.Hr(className="my-2"),
+                                             html.P(
+                                                 "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
+                                                 "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
+                                                 "programs to improve teaching and leadership through professional learning at the state and district "
+                                                 "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
+                                                 "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
+                                                 "improving teachers and school leadership quality. You can read the Title II Part A details on the "
+                                                 "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
+                                                 "Development Matters, “In education, research has shown that teaching quality and school leadership "
+                                                 "are the most important factors in raising student achievement.”"
+                                             ),
+                                             dbc.Button("Learn mores", size="lg", color="primary", ),
+                                         ], id="jumbo"
+                                     )
+                                 ], width=7),
+
+                                 dbc.Col([
+                                     html.Div([
+                                         dbc.Card(
+                                             [
+                                                 dbc.CardImg(src="/assets/title2_img.png", top=True),
+                                                 dbc.CardBody(
+                                                     html.P("Image from the Title Website", id="card-text")
+                                                 ),
+                                             ],
+                                             style={"width": "75rem"},
+                                         )
+                                     ],id="card-container")
+                                     #     html.Div(
+                                     #         [
+                                     #             html.Img(src="/assets/title2_img.png", id="title-img"),
+                                     #             html.H2("Title II Information Website",id="title2-text"),
+                                     #         ],className="img-cont")
+                                     #
+                                 ], width={"size": 4, "offset": 1}, )
+                             ]
+                         )
+                     ], className="ten columns offset-by-one")
                      # html.Div([
                      #     html.H3('Tab content 3'),
                      #     dcc.Graph(

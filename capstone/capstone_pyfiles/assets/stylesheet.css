@@ -9,7 +9,7 @@ html {
 }
 
 .banner {
-    height: 75px;
+    height: 7vh;
     margin: -10px -10px 10px;
     background-color: rgb(62, 88, 100);
     border-radius: 2px;
@@ -17,13 +17,21 @@ html {
 }
 
 .banner h2{
-    text-align: center;
-    color: white;
-    margin-left: 2%;
-    margin-top: 2px;
-    font-size: 500%;
-    display: inline-block;
     font-family: 'Alegreya Sans', sans-serif;
+    color: white;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin: auto;
+    font-size: 3.5vh;
+    text-align: center;
+    margin-left: 3vh;
+    margin-top: 1.75vh;
 
 }
 
