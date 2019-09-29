@@ -44,3 +44,13 @@
     font-size: 1vh;
     height: 3vh;
 }
+
+#about-sub {
+    text-align: center;
+}
+
+#gh_logo {
+    height: auto;
+    width: 10vh;
+    margin-top: 2vh;
+}

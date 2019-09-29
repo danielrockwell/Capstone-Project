@@ -110,7 +110,8 @@ app.layout = html.Div(children=[
                                          "improving teachers and school leadership quality. You can read the Title II Part A details on the "
                                          "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
                                          "Development Matters, “In education, research has shown that teaching quality and school leadership "
-                                         "are the most important factors in raising student achievement.”",id="text-test"
+                                         "are the most important factors in raising student achievement.”",
+                                         id="text-test"
                                      ),
                                  ], className="jumbo"
                              ),
@@ -176,23 +177,41 @@ app.layout = html.Div(children=[
                                              dbc.Col([
                                                  dbc.Jumbotron(
                                                      [
-                                                         html.H1("Title II", className="display-3", id="second-title"),
+                                                         html.H1("About This Dashboard", className="display-3",
+                                                                 id="second-title"),
                                                          html.P(
-                                                             "General information about Title II",
-                                                             className="lead",
+                                                             "The How and Why of this Dashboard",
+                                                             className="lead", id='about-sub'
                                                          ),
                                                          html.Hr(className="my-2"),
-                                                         html.P(
-                                                             "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
-                                                             "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
-                                                             "programs to improve teaching and leadership through professional learning at the state and district "
-                                                             "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
-                                                             "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
-                                                             "improving teachers and school leadership quality. You can read the Title II Part A details on the "
-                                                             "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
-                                                             "Development Matters, “In education, research has shown that teaching quality and school leadership "
-                                                             "are the most important factors in raising student achievement.”",
-                                                         ),
+                                                         dbc.Row([
+                                                             dbc.Col([
+                                                                 html.P(
+                                                                     "This dashboard was created in order to give insight to the "
+                                                                     "enornous amount of free information available on title2.org to better teacher and leadership quality. "
+                                                                     "Helpful visualizations allows data-driven decisions in order to produce the highest quality of "
+                                                                     "education within the United States. With a larger emphasis and the trends within the Mathematics "
+                                                                     "realm, this dashboard whas been specifiaclly tweaked to aid the Mathematics department in Louisiana.",
+                                                                 ),
+                                                             ], width=12),
+
+                                                             dbc.Col([
+                                                                 html.P(
+                                                                     "The creation of this dashboard is primaruly built using Python, HTML, CSS, and Dash. Other "
+                                                                     "popular Data Science modules that were used in the data processing were Pandas and Plotly. To view the "
+                                                                     "source code for this dashboard, click on the GitHub icon to go directly to the GitHub page."
+                                                                 ),
+                                                             ], width=9),
+                                                             dbc.Col([
+                                                                 html.A(
+                                                                     html.Img(src="/assets/gh_logo.png", id="gh_logo"),
+                                                                     href="https://github.com/danielrockwell/Capstone-Project",
+                                                                     target="_blank",
+                                                                 )
+
+                                                             ], width=3),
+                                                         ])
+
                                                      ], className="jumbo"),
                                              ], width=6)
                                          ])
