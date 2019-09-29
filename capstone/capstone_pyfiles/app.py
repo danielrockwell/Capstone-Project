@@ -10,62 +10,6 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css',
                         'https://fonts.googleapis.com/css?family=Alegreya+Sans:100|Raleway:100&display=swap',
                         dbc.themes.BOOTSTRAP, ]
 
-navbar = dbc.NavbarSimple(
-    children=[
-        dbc.NavItem(dbc.NavLink("Link", href="#")),
-        dbc.DropdownMenu(
-            nav=True,
-            in_navbar=True,
-            label="Menu",
-            children=[
-                dbc.DropdownMenuItem("Entry 1"),
-                dbc.DropdownMenuItem("Entry 2"),
-                dbc.DropdownMenuItem(divider=True),
-                dbc.DropdownMenuItem("Entry 3"),
-            ],
-        ),
-    ],
-    brand="Demo",
-    brand_href="#",
-    sticky="top",
-)
-
-body = dbc.Container(
-    [
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H2("Heading"),
-                        html.P(
-                            """\
-                Donec id elit non mi porta gravida at eget metus.
-                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-                nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-                malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non
-                mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-                commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-                amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
-                odio dui."""
-                        ),
-                        dbc.Button("View details", color="secondary"),
-                    ],
-                    md=4,
-                ),
-                dbc.Col(
-                    [
-                        html.H2("Graph"),
-                        dcc.Graph(
-                            figure={"data": [{"x": [1, 2, 3], "y": [1, 4, 9]}]}
-                        ),
-                    ]
-                ),
-            ]
-        )
-    ],
-    className="mt-4",
-)
-
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = 'Title II Dashboard'
 app.layout = html.Div(children=[
@@ -128,51 +72,131 @@ app.layout = html.Div(children=[
                          ]),
                  dcc.Tab(label='Analysis and Statistics', children=[
                      html.Div([
-                         html.Div([
+                         dbc.Row([
                              html.Div([
-                                 html.H3('Program Types'),
-                                 dcc.Graph(
-                                     id='donut-graph',
-                                     figure=create_donut_chart()
-                                 ),
-                             ], className="six columns", id="pie-div"),
-                             html.Div([
-                                 html.H3('Program Types by Year'),
-                                 dcc.Graph(
-                                     id='stacked-bar',
-                                     figure=create_stacked_bar()
-                                 ),
-                             ], className="six columns", id="bar-div"),
-                         ], className="row", id="tab2-graphs")
-                     ], className="ten columns offset-by-one", id="tab2_main")
+                                 html.Div([
+                                     html.Div([
+                                         html.H3('Program Types'),
+                                         dcc.Graph(
+                                             id='donut-graph',
+                                             figure=create_donut_chart()
+                                         ),
+                                     ], className="six columns", id="pie-div"),
+                                     html.Div([
+                                         html.H3('Program Types by Year'),
+                                         dcc.Graph(
+                                             id='stacked-bar',
+                                             figure=create_stacked_bar()
+                                         ),
+                                     ], className="six columns", id="bar-div"),
+                                 ], className="row", id="tab2-graphs")
+                             ], className="ten columns offset-by-one", id="tab2_main"),
+                         ]),
+                         dbc.Row([
+                             dbc.Jumbotron(
+                                 [
+                                     html.H1("Title II", className="display-3"),
+                                     html.P(
+                                         "General information about Title II",
+                                         className="lead",
+                                     ),
+                                     html.Hr(className="my-2"),
+                                     html.P(
+                                         "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
+                                         "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
+                                         "programs to improve teaching and leadership through professional learning at the state and district "
+                                         "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
+                                         "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
+                                         "improving teachers and school leadership quality. You can read the Title II Part A details on the "
+                                         "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
+                                         "Development Matters, “In education, research has shown that teaching quality and school leadership "
+                                         "are the most important factors in raising student achievement.”",id="text-test"
+                                     ),
+                                 ], className="jumbo"
+                             ),
+                         ])
+                     ], className="ten columns offset-by-one")
                  ]),
                  dcc.Tab(label='Title II Information', children=[
                      html.Div([
                          dbc.Row(
                              [
                                  dbc.Col([
-                                     dbc.Jumbotron(
-                                         [
-                                             html.H1("Title II", className="display-3"),
-                                             html.P(
-                                                 "General information about Title II",
-                                                 className="lead",
-                                             ),
-                                             html.Hr(className="my-2"),
-                                             html.P(
-                                                 "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
-                                                 "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
-                                                 "programs to improve teaching and leadership through professional learning at the state and district "
-                                                 "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
-                                                 "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
-                                                 "improving teachers and school leadership quality. You can read the Title II Part A details on the "
-                                                 "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
-                                                 "Development Matters, “In education, research has shown that teaching quality and school leadership "
-                                                 "are the most important factors in raising student achievement.”"
-                                             ),
-                                             dbc.Button("Learn mores", size="lg", color="primary", ),
-                                         ], id="jumbo"
-                                     )
+                                     dbc.Row([
+                                         dbc.Jumbotron(
+                                             [
+                                                 html.H1("Title II", className="display-3"),
+                                                 html.P(
+                                                     "General information about Title II",
+                                                     className="lead",
+                                                 ),
+                                                 html.Hr(className="my-2"),
+                                                 html.P(
+                                                     "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
+                                                     "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
+                                                     "programs to improve teaching and leadership through professional learning at the state and district "
+                                                     "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
+                                                     "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
+                                                     "improving teachers and school leadership quality. You can read the Title II Part A details on the "
+                                                     "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
+                                                     "Development Matters, “In education, research has shown that teaching quality and school leadership "
+                                                     "are the most important factors in raising student achievement.”"
+                                                 ),
+                                                 html.A(
+                                                     html.Button("Go To Title II Website", id="title2-button"),
+                                                     href='https://title2.ed.gov/Public/Home.aspx',
+                                                     target="_blank"
+                                                 ),
+                                             ], className="jumbo"
+                                         ),
+                                         dbc.Row([
+                                             dbc.Col([
+                                                 dbc.Jumbotron(
+                                                     [
+                                                         html.H1("Title II", className="display-3"),
+                                                         html.P(
+                                                             "General information about Title II",
+                                                             className="lead",
+                                                         ),
+                                                         html.Hr(className="my-3"),
+                                                         html.P(
+                                                             "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
+                                                             "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
+                                                             "programs to improve teaching and leadership through professional learning at the state and district "
+                                                             "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
+                                                             "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
+                                                             "improving teachers and school leadership quality. You can read the Title II Part A details on the "
+                                                             "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
+                                                             "Development Matters, “In education, research has shown that teaching quality and school leadership "
+                                                             "are the most important factors in raising student achievement.”"
+                                                         ),
+                                                     ], className="jumbo", id="jumbo2"
+                                                 ),
+                                             ], width=6),
+                                             dbc.Col([
+                                                 dbc.Jumbotron(
+                                                     [
+                                                         html.H1("Title II", className="display-3", id="second-title"),
+                                                         html.P(
+                                                             "General information about Title II",
+                                                             className="lead",
+                                                         ),
+                                                         html.Hr(className="my-2"),
+                                                         html.P(
+                                                             "According to Scholastic.com, The Every Student Succeeds Act (ESSA) is the most recent reauthorization of the 1965 act "
+                                                             "that establishes the federal government’s role in education. Under ESSA, Title II authorizes "
+                                                             "programs to improve teaching and leadership through professional learning at the state and district "
+                                                             "levels. Under ESSA, professional development is more clearly defined and there are rules for evidence "
+                                                             "of learning. Specifically, Title II Part A is used to increase academic achievement of students by "
+                                                             "improving teachers and school leadership quality. You can read the Title II Part A details on the "
+                                                             "U.S. Department of Education’s website. As stated in Learning Forward’s report Why Professional "
+                                                             "Development Matters, “In education, research has shown that teaching quality and school leadership "
+                                                             "are the most important factors in raising student achievement.”",
+                                                         ),
+                                                     ], className="jumbo"),
+                                             ], width=6)
+                                         ])
+                                     ])
                                  ], width=7),
 
                                  dbc.Col([
@@ -184,26 +208,15 @@ app.layout = html.Div(children=[
                                                      html.P("Image from the Title Website", id="card-text")
                                                  ),
                                              ],
-                                             style={"width": "75rem"},
+                                             style={"width": "75rem"}, color="light"
                                          )
-                                     ],id="card-container")
-                                     #     html.Div(
-                                     #         [
-                                     #             html.Img(src="/assets/title2_img.png", id="title-img"),
-                                     #             html.H2("Title II Information Website",id="title2-text"),
-                                     #         ],className="img-cont")
-                                     #
+                                     ], id="card-container")
                                  ], width={"size": 4, "offset": 1}, )
-                             ]
-                         )
+                             ],
+
+                         ),
+
                      ], className="ten columns offset-by-one")
-                     # html.Div([
-                     #     html.H3('Tab content 3'),
-                     #     dcc.Graph(
-                     #         id='graph-2-tab',
-                     #         figure=create_donut_chart(),
-                     #     )
-                     # ]),
                  ]),
              ]),
 
@@ -243,6 +256,16 @@ def update_figure(n_clicks, state):
 def update_figure(n_clicks, state):
     data_table = make_data_table(state)
     return data_table
+
+
+# @app.callback(
+#     Output("example-output", "children"), [Input("example-button", "n_clicks")]
+# )
+# def on_button_click(n):
+#     if n is None:
+#         return "Not clicked."
+#     else:
+#         return f"Clicked {n} times."
 
 
 app.clientside_callback(

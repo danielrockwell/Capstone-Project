@@ -1,13 +1,12 @@
-#jumbo p{
-    font-size: 200%;
+.jumbo p{
+    font-size: 1.5vh;
     font-family: 'Raleway', sans-serif;
 }
 
-#jumbo {
+.jumbo {
     margin-top:100;
     font-family: 'Raleway', sans-serif;
 }
-
 
 #title2-text {
 
@@ -20,11 +19,28 @@
 #card-text {
     font-size: 2vh;
     font-family: 'Raleway', sans-serif;
-    text-align-center;
+    text-align: center;
 }
 
 #card-container {
     display: flex;
     width: 95%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#second-title {
+    text-align: center;
+}
+
+#card-container {
+    margin-top: 2.75vh;
+
+}
+
+#title2-button {
+    background-color: rgb(36,160,237);
+    border-radius: 5px;
+    color: white;
+    font-size: 1vh;
+    height: 3vh;
 }

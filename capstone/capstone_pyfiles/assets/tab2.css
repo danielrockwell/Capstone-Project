@@ -2,6 +2,8 @@
     background-color: white;
     border:1.5px solid black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 2vh;
+    padding-left: 2vh;
 }
 
 #pie-div, #bar-div h3 {
@@ -16,5 +18,10 @@
 }
 
 #tab2-graphs h3 {
+    margin-top: 2.5vh;
     margin-bottom: 2.5vh;
+}
+
+#text-test {
+
 }
