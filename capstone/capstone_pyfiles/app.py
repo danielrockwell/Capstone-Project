@@ -15,7 +15,9 @@ app.title = 'Title II Dashboard'
 app.layout = html.Div(children=[
     html.Div(id="output-clientside"),
     html.Div([
-        html.H2("Mathematics Teacher Production Dashboard"),
+        html.Div([
+            html.H2("Mathematics Teacher Production Dashboard"),
+        ], className="title-container"),
         html.Div([
             html.Img(src="/assets/lsu_logo.png", id="img_in_flex"),
         ], id="img-flex"),
@@ -26,9 +28,13 @@ app.layout = html.Div(children=[
                     placeholder="Enter State or 'All'",
                     type="text",
                     value="",
-                    style={'width': 150, },
+                    style={'width': 150, "font-size": 15,
+                           "font-family": "'Raleway', sans-serif"},
                 ),
-                html.Button(id="usState-submit-button", children='Enter', n_clicks=0, style={'width': 100})
+                html.Button(id="usState-submit-button", children='Enter', n_clicks=0,
+                            style={'width': 100, "font-size": 15,
+                                   "font-family": "'Raleway', sans-serif"},
+                            ),
             ], id='f_button'),
             html.Div([
                 dcc.Dropdown(
@@ -36,7 +42,8 @@ app.layout = html.Div(children=[
                     options=[{'label': str(x), 'value': x} for x in range(2018, 2011, -1)],
                     value="",
                     placeholder="Select Year",
-                    style={'width': 120}
+                    style={'width': 120, "font-size": 15,
+                           "font-family": "'Raleway', sans-serif"},
                 ),
             ], id='s_button')
         ], id="submit-container"),
@@ -44,7 +51,7 @@ app.layout = html.Div(children=[
         className="banner"
     ),
 
-    dcc.Tabs(id="tabs-example", style={'font-size': '300%', },
+    dcc.Tabs(id="tabs-example", style={'font-size': '2vh', },
              children=[
                  dcc.Tab(id="tab1", label='Teacher Production Graphs',
                          children=[
@@ -79,15 +86,13 @@ app.layout = html.Div(children=[
                                          html.H3('Program Types'),
                                          dcc.Graph(
                                              id='donut-graph',
-                                             figure=create_donut_chart()
-                                         ),
+                                             style={'height': '40vh'}),
                                      ], className="six columns", id="pie-div"),
                                      html.Div([
                                          html.H3('Program Types by Year'),
                                          dcc.Graph(
                                              id='stacked-bar',
-                                             figure=create_stacked_bar()
-                                         ),
+                                             style={'height': '40vh'}),
                                      ], className="six columns", id="bar-div"),
                                  ], className="row", id="tab2-graphs")
                              ], className="ten columns offset-by-one", id="tab2_main"),
@@ -154,10 +159,10 @@ app.layout = html.Div(children=[
                                              dbc.Col([
                                                  dbc.Jumbotron(
                                                      [
-                                                         html.H1("Title II", className="display-3"),
+                                                         html.H1("Title II", className="display-3", id="third-title"),
                                                          html.P(
                                                              "General information about Title II",
-                                                             className="lead",
+                                                             className="lead"
                                                          ),
                                                          html.Hr(className="my-3"),
                                                          html.P(
@@ -277,14 +282,22 @@ def update_figure(n_clicks, state):
     return data_table
 
 
-# @app.callback(
-#     Output("example-output", "children"), [Input("example-button", "n_clicks")]
-# )
-# def on_button_click(n):
-#     if n is None:
-#         return "Not clicked."
-#     else:
-#         return f"Clicked {n} times."
+@app.callback(Output("donut-graph", "figure"),
+              [Input("usState-submit-button", "n_clicks")],
+              [State("usState-input", "value")]
+              )
+def update_figure(n_clicks, state):
+    donut = create_donut_chart(state)
+    return donut
+
+
+@app.callback(Output("stacked-bar", "figure"),
+              [Input("usState-submit-button", "n_clicks")],
+              [State("usState-input", "value")]
+              )
+def update_figure(n_clicks, state):
+    stack_bar = create_stacked_bar(state)
+    return stack_bar
 
 
 app.clientside_callback(
